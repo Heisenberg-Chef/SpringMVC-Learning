@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+<!--    hello界面 并且传输一串字符串-->
+    <servlet>
+        <servlet-name>hello</servlet-name>
+        <servlet-class>com.qi.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+<!--    接受界面,读取我们hello界面传输的我的名字-->
+    <servlet>
+        <servlet-name>getter</servlet-name>
+        <servlet-class>com.qi.servlet.GetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getter</servlet-name>
+        <url-pattern>/getter</url-pattern>
+    </servlet-mapping>
+<!--    404-->
+<!--    <servlet>-->
+<!--        <servlet-name>error</servlet-name>-->
+<!--        <servlet-class>com.qi.servlet.ErrorServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>error</servlet-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    超时时间-->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+<!--    默认网页,欢迎页-->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
